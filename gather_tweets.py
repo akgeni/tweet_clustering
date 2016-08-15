@@ -12,13 +12,13 @@ access_token_secret = credentials.access_token_secret
 consumer_key = credentials.consumer_key
 consumer_secret = credentials.consumer_secret 
 
-fileName = sys.argv[1] + '.json'
+#fileName = sys.argv[1] + '.json'
 class StdOutListener(StreamListener):
    '''Redirects tweets from stream to stdout
    '''
    def on_data(self, data):
       try:
-         with open(fileName, 'a') as f:
+         with open('tweets.json', 'a') as f:
             f.write(data)
             return True
       except BaseException as exp:
